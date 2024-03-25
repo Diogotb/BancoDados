@@ -1,0 +1,11 @@
+Verificar se o PostgreSQL está Instalado
+Abrir VsCode
+Criar um Novo Perfil (SQL)
+Instalar a Extensão PostgreSQL - Microsoft
+Ctrl+Shift+P -> Postgresql: New Query
+"Create Profile"
+Server Name : localhost
+DataBase: ""
+User Name: postgres
+Password: postgres
+Port: 5432
