@@ -25,3 +25,23 @@ CREATE TABLE IF NOT EXISTS Fornecedor(
     Status INT,
     Cidade VARCHAR (30)
 );
+
+CREATE TABLE IF NOT EXISTS Departamento (
+    Dcodigo INT NOT NULL,
+    Dnome VARCHAR(30) NOT NULL,
+    Cidade VARCHAR(30),
+    PRIMARY KEY (Dcodigo)
+);
+
+SELECT * FROM Departamento;
+
+CREATE TABLE IF NOT EXISTS Empregado(
+    Ecodigo INT NOT NULL,
+    Enome VARCHAR(40) NOT NULL,
+    CPF VARCHAR(15) NOT NULL,
+    Salario DECIMAL(7,2),
+    Dcodigo INT NOT NULL,
+    PRIMARY KEY(Ecodigo,Enome)
+);
+
+SELECT * FROM Empregado;
