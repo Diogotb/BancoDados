@@ -1,0 +1,3 @@
+CREATE DATABASE sa4_ex1_bd;
+
+CRE
