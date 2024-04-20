@@ -86,7 +86,7 @@ WHERE pc.ID_Categoria = 1;
 SELECT * FROM Funcionarios;
 
 -- Atualizar o cargo de um funcionário na tabela "Funcionários"
-UPDATE Funcionarios SET Cargo = 'Supervisor' WHERE ID = 1;
+UPDATE Funcionarios SET Cargo = 'Gerente' WHERE ID = 1;
 
 -- Excluir um funcionário da tabela "Funcionários"
 DELETE FROM Funcionarios WHERE ID = 3;
@@ -126,7 +126,9 @@ HAVING COUNT(p.ID) > 2;
 SELECT * FROM Pedidos ORDER BY Status, Data;
 
 -- Atualizar o status de todos os pedidos com mais de 30 dias para "Atrasado"
-UPDATE Pedidos SET Status = 'Atrasado' WHERE Data < DATE_SUB(CURDATE(), INTERVAL 30 DAY);
+UPDATE Pedidos SET Status = 'Atrasado' WHERE 
+Status='Em Andamento' AND 
+Data < CURRENT_DATE - 30;
 
 -- Calcular o total de vendas por categoria de produto
 SELECT c.Nome AS Categoria, SUM(p.Preco) AS Total_Vendas

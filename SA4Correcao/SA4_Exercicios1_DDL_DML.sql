@@ -38,8 +38,9 @@ INSERT INTO Pedidos (ID, ID_Cliente, Data_Pedido, Total, Status) VALUES
 UPDATE Pedidos SET Total = 120.00 WHERE ID = 1;
 
 -- Excluir um cliente e seus respectivos pedidos
-DELETE FROM Clientes WHERE ID = 3;
+
 DELETE FROM Pedidos WHERE ID_Cliente = 3;
+DELETE FROM Clientes WHERE ID = 3;
 
 -- Selecionar todos os pedidos com status "Em andamento"
 SELECT * FROM Pedidos WHERE Status = 'Em andamento';
@@ -48,4 +49,4 @@ SELECT * FROM Pedidos WHERE Status = 'Em andamento';
 SELECT c.Nome, p.Data_Pedido, p.Total
 FROM Clientes c
 JOIN Pedidos p ON c.ID = p.ID_Cliente
-WHERE p.Data_Pedido >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
+WHERE p.Data_Pedido >= CURRENT_DATE - 30;
